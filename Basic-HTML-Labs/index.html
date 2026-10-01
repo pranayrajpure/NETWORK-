@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NetConnect ISP - Registration (jQuery Enhanced)</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- jQuery Library (Lab 2 Requirement) -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Notification Banner for jQuery Feedback -->
+        <div id="feedbackMessage" class="feedback-banner"></div>
+
+        <!-- Theme Toggle Button -->
+        <div class="theme-toggle-container">
+            <button id="themeToggleBtn" type="button" class="theme-btn">🌙 Dark Mode</button>
+        </div>
+
+        <!-- Hero Section -->
+        <header class="hero">
+            <h1>NETCONNECT ISP</h1>
+            <p>Connect Better. Live Faster.</p>
+        </header>
+
+        <h2>Customer Registration</h2>
+        
+        <form id="registrationForm">
+            <!-- Basic Details -->
+            <div class="input-group">
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" required>
+            </div>
+
+            <div class="input-group">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" required>
+            </div>
+
+            <div class="input-group">
+                <label for="mobile">Mobile Number:</label>
+                <input type="tel" id="mobile" pattern="[0-9]{10}" placeholder="10-digit number" required>
+            </div>
+
+            <div class="input-group">
+                <label for="address">Address:</label>
+                <textarea id="address" required></textarea>
+            </div>
+
+            <div class="input-group">
+                <label for="city">City:</label>
+                <input type="text" id="city" required>
+            </div>
+
+            <!-- ISP Specific Details -->
+            <div class="input-group">
+                <label for="plan">Select Internet Plan:</label>
+                <select id="plan" required>
+                    <option value="">-- Choose a Plan --</option>
+                    <option value="basic">Basic: 50 Mbps - ₹499/mo</option>
+                    <option value="smart">Smart: 100 Mbps - ₹699/mo</option>
+                    <option value="pro">Pro: 200 Mbps - ₹999/mo</option>
+                    <option value="ultra">Ultra: 500 Mbps - ₹1499/mo</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" required>
+            </div>
+
+            <!-- Password & Show/Hide Toggle (jQuery) -->
+            <div class="input-group">
+                <label for="password">Password:</label>
+                <div class="password-wrapper">
+                    <input type="password" id="password" required>
+                    <button type="button" id="togglePasswordBtn" class="toggle-pass-btn">👁️ Show</button>
+                </div>
+                <div id="strengthMeter" class="strength-meter">Strength: <span id="strengthText">None</span></div>
+            </div>
+
+            <div class="input-group">
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" id="confirmPassword" required>
+                <span id="passwordMatchError" class="error-text"></span>
+            </div>
+
+            <!-- Customer Service Rating (jQuery Star System) -->
+            <div class="input-group rating-section">
+                <label>Rate Our Service Website:</label>
+                <div class="stars" id="starRating">
+                    <span class="star" data-value="1">★</span>
+                    <span class="star" data-value="2">★</span>
+                    <span class="star" data-value="3">★</span>
+                    <span class="star" data-value="4">★</span>
+                    <span class="star" data-value="5">★</span>
+                </div>
+                <p id="ratingValue">Select Rating (0 / 5 Stars)</p>
+            </div>
+
+            <!-- Terms -->
+            <div class="input-group checkbox-group">
+                <input type="checkbox" id="terms" required>
+                <label for="terms">I agree to the Terms and Conditions</label>
+            </div>
+
+            <button type="submit" class="submit-btn">Register Account</button>
+        </form>
+    </div>
+
+    <!-- Custom jQuery Logic -->
+    <script src="script.js"></script>
+</body>
+</html>
